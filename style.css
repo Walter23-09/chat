@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    font-size: 62.5%;
+
+    --bg-color: #1A1924;
+    --bg-message-you-color: #07847E;
+    --bg-message-person-color: #633BBC;
+    --bg-send-message-color: #282843;
+    --text-color: #E1E1E6;
+    --online-color: #00B37E;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body { 
+    font-family: 'Roboto', sans-serif;
+    
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    
+    display: flex;
+    justify-content: center;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+section {
+    width: 100%;
+    max-width: 100rem;
+}
+
+
+.profile {
+    position: fixed;
+    top: 0;
+    padding: 3.2rem 0 2rem;
+    z-index: 2;
+
+    background-color: var(--bg-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+.profile-info img {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.profile-info .name-status {
+    display: grid;
+    gap: .4rem;
+}
+.profile-info .name-status .name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.profile-info .name-status .status {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+.profile-info .name-status .status .ball {
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    background-color: var(--online-color);
+}
+.profile-info .name-status .status .text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--online-color);
+}
+.profile svg {
+    cursor: pointer;
+}
+
+
+.messages {
+    margin-top: 10rem;
+    display: grid;
+}
+.messages p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.message, .messages .hour {
+    margin-bottom: 3rem;
+}
+.messages .hour {
+    text-align: center;
+}
+.message .text {
+    display: inline-block;
+    padding: 1.4rem;
+    margin-top: 1rem;
+    border-radius: .8rem;
+
+    max-width: 48%;
+}
+.message.you {
+    text-align: right;
+}
+.message.you .text {
+    background-color: var(--bg-message-you-color);
+    border-bottom-right-radius: 0;
+}
+.message.person {
+    text-align: left;
+}
+.message.person .text {
+    background-color: var(--bg-message-person-color);
+    border-top-left-radius: 0;
+}
+
+
+.send-message{
+    position: fixed;
+    bottom: 0;
+    padding: 2.4rem 0 3.2rem;
+
+    background-color: var(--bg-color);
+}
+.send-message-div {
+    width: 100%;
+    height: 5.2rem;
+
+    padding: 1.4rem 2.4rem;
+
+    border-radius: 999px;
+    background-color: var(--bg-send-message-color);
+}
+.send-message-form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.send-message input {
+    width: 100%;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    color: var(--text-color);
+}
+.send-message:focus {
+    border: none;
+}
+.send-message svg {
+    cursor: pointer;
+    width: 2.25rem;
+    height: 1.95rem;
+
+    margin-left: 1rem;
+}
+
+
+
+
+@media(max-width: 1000px){
+    section {
+        max-width: 80rem;
+    }
+}
+@media(max-width: 850px){
+    section {
+        max-width: 70rem;
+    }
+}
+@media(max-width: 750px){
+    section {
+        max-width: 60rem;
+    }
+    .profile {
+        padding-top: 2.4rem;
+    }
+    .send-message {
+        padding-bottom: 2.4rem;
+    }
+    .messages {
+        margin-top: 9.2rem;
+    }
+}
+@media(max-width: 650px){
+    section {
+        max-width: 50rem;
+    }
+}
+@media(max-width: 550px){
+    section {
+        max-width: 40rem;
+    }
+}
+@media(max-width: 450px){
+    section {
+        max-width: 32rem;
+    }
+}
